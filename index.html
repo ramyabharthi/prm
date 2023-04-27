@@ -1,0 +1,34 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Reverse Number</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body align="center">
+      <h2>REVERSE NUMBER</h2>
+      <label for="input-number">Enter an integer:</label>
+      <input type="number" id="input-number"><br>
+      <button id="reverse-button">Reverse</button>
+      <p id="output"></p>
+      <script>
+        let input = document.getElementById('input-number');
+        let button = document.getElementById('reverse-button');
+  
+        button.addEventListener('click', () => {
+          let n = Number(input.value);
+          let reverseN = 0;
+          while (n > 0) {
+            let remainder = n % 10;
+            reverseN = (reverseN * 10) + remainder;
+            n = Math.floor(n / 10);
+          }
+          let output = document.getElementById('output');
+          output.textContent = `The reverse of the number is: ${reverseN}`;
+        });
+      </script>
+    </body>
+  </html>
+  
+</body>
+</html>
